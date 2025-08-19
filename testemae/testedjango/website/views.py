@@ -8,5 +8,4 @@ def contato(request):
     return render(request, 'contato.html')
 
 def wow(request):
-    oxi="tu achou uma easter egg"
-    return render(request, 'wow.html', {'oxi':oxi})
+    return render(request, 'wow.html')
