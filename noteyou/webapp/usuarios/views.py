@@ -35,10 +35,10 @@ Usuario = get_user_model()
 # Definindo função que realiza o cadastro de um usuário.
 def cadastro_usuario(request):
     erro = None
-
     # Verifica se o método utilizado para compartilhamento de dados é POST, e atribui os dados à variáveis.
     if request.method == "POST":
-        nome = request.POST.get("first_name")
+        nome = request.POST.get("nome")
+        sobrenome = request.POST.get("sobrenome")
         username = request.POST.get("username")
         email = request.POST.get("email")
         senha = request.POST.get("senha")
@@ -55,17 +55,19 @@ def cadastro_usuario(request):
         else:
             # Se não houver empecilhos, o usuário será criado
             user = Usuario.objects.create_user(
+                first_name = nome,
+                last_name = sobrenome,
                 username = username,
                 email = email,
-                senha = make_password(senha),
+                password = make_password(senha),
             )
-        
-        # Se o usuário incluir uma foto, será incluído no perfil.
-        if foto:
-            user.foto = foto
+            
+            # Se o usuário incluir uma foto, será incluído no perfil.
+            if foto:
+                user.foto = foto
 
-        # Salvando o usuário.
-        user.save()
+            # Salvando o usuário.
+            user.save()
 
         # Após a criação do perfil, redireciona o usuário à página do próprio perfil.
         def login(request, user):
