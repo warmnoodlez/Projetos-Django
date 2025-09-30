@@ -21,11 +21,14 @@ Para assuntos relacionados a sistema de autenticação, consultar: https://docs.
 
 # Create your views here.
 
+def home(request):
+    return render(request, 'base.html')
+
 def registro(request):
-    return render (request, 'cadastro.html')
+    return render(request, 'cadastro.html')
 
 def login(request):
-    return render (request, 'entrar.html')
+    return render(request, 'entrar.html')
 
 # ---
 

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webapp.pginicial.apps.PginicialConfig',
     'webapp.diario.apps.DiarioConfig',
     'webapp.usuarios.apps.UsuariosConfig',
 ]
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'webapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'webapp', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

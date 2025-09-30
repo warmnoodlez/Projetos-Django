@@ -1,0 +1,24 @@
+/* Tags */
+nav {
+    background-color: #0532ff;
+}
+
+/* Classes */
+.conteiner {
+    display: flex;
+}
+
+.navbar-item img {
+    width: 15%;
+    margin: 1%;
+}
+
+/* Ids */
+#navbar {
+    justify-content: space-around;
+}
+
+#icon {
+    align-items: center;
+    width: 30%
+}
