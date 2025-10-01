@@ -1,24 +1,24 @@
 /* Tags */
+
 nav {
     background-color: #0532ff;
 }
 
 /* Classes */
-.conteiner {
+
+.navbar-item {
     display: flex;
+    margin: auto;
+    justify-content: space-evenly;
 }
 
 .navbar-item img {
-    width: 15%;
+    width: 30%;
     margin: 1%;
 }
 
 /* Ids */
-#navbar {
-    justify-content: space-around;
-}
 
-#icon {
-    align-items: center;
-    width: 30%
+#navbar {
+    display: flex;
 }

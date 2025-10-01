@@ -20,20 +20,20 @@ Para assuntos relacionados a sistema de autenticação, consultar: https://docs.
 """
 
 # Create your views here.
+# Pega o modelo comum de um usuário e atribui na variável Usuario.
+Usuario = get_user_model()
 
 def home(request):
     return render(request, 'base.html')
 
 def registro(request):
+    # print(request.method)
+    # if request.method == "POST":
     return render(request, 'cadastro.html')
 
-def login(request):
+def entrar(request):
     return render(request, 'entrar.html')
 
-# ---
-
-# Pega o modelo comum de um usuário e atribui na variável Usuario.
-Usuario = get_user_model()
 
 # Definindo função que realiza o cadastro de um usuário.
 def cadastro_usuario(request):
@@ -72,8 +72,8 @@ def cadastro_usuario(request):
             # Salvando o usuário.
             user.save()
 
-        # Após a criação do perfil, redireciona o usuário à página do próprio perfil.
-        def login(request, user):
+        # Após a criação do perfil, redireciona o usuário à página do próprio perfil.        
+            login(request, user)
             return redirect("perfil")
 
     return render(request, "cadastro.html", {"erro": erro})
@@ -104,7 +104,7 @@ def login_usuario(request):
 # Definindo função que realiza o logout do usuário e retorna à página de login.
 def logout_usuario(request):
     logout(request)
-    return redirect("login")
+    return redirect("entrar")
 
 # Se o login for realizado, executa e entra na página do perfil do usuário.
 @login_required

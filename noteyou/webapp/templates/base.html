@@ -14,12 +14,16 @@
     <body>
         {% block 'body' %}{% endblock %}
 
-        <nav class="conteiner" id="navbar">
+        <nav id="navbar">
             <div class="navbar-item">
                 <img src="{% static 'img/abelha.png'%}" id="icon">
             </div>
-            <div class="navbar-item">
-                <img src="{% static 'img/user-icon.png'%}" id="user-icon">
+            <div class="navbar-item" id="user-icon-container">
+                {%if user.username %}
+                    <a href="{% url 'perfil' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">{{ user.username }}</a>
+                {% else %}
+                    <a href="{% url 'entrar' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">LOGIN</a>
+                {% endif %}
             </div>
         </nav>
         
