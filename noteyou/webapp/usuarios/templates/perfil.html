@@ -1,10 +1,14 @@
+{% extends 'base.html' %}
+
+{% block 'body' %}
 <h1>Olá, {{user.first_name}} {{user.last_name}}</h1>
 <div>
-    {{user.username}}
+    Seu Nickname: {{user.username}}
 </div>
-<hr>
+<hr class="invisivel">
 <div>
     {{user.foto}}
-</div>
+</div class="invisivel">
 <hr>
-<a href="{% url 'sair' %}"><button>LOGOUT</button></a>
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+{% endblock %}

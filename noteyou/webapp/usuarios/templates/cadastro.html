@@ -1,7 +1,10 @@
 <h2>Registrar Usuário</h2>
-{% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %}
+
+{% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
+
+<!-- Formulário de cadastro de perfil. -->
 <form method="post" action="{% url 'cadastrar' %}" enctype="multipart/form-data">
-    {% csrf_token %}
+    {% csrf_token %} <!-- Token de sergurança para casos de ataques mal-intencionados. -->
     <label>Nome:</label>
     <input type="text" name="nome"><br>
     <label>Sobrenome:</label>
@@ -20,4 +23,5 @@
     <input type="file" name="foto"><br>
     <button type="submit">Registrar</button>
 </form>
-<a href="{% url 'entrar' %}">Já tenho conta</a>
+
+<a href="{% url 'entrar' %}"><button>Já possuo conta</button></a> <!-- Botão que redireciona para a página de Login. -->

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,21 +13,9 @@
         {% block 'head' %}{% endblock %}
     </head>
     <body>
-        {% block 'body' %}{% endblock %}
+        {% include 'elementos/navbar.html' %}
 
-        <nav id="navbar">
-            <div class="navbar-item">
-                <img src="{% static 'img/abelha.png'%}" id="icon">
-            </div>
-            <div class="navbar-item" id="user-icon-container">
-                {%if user.username %}
-                    <a href="{% url 'perfil' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">{{ user.username }}</a>
-                {% else %}
-                    <a href="{% url 'entrar' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">LOGIN</a>
-                {% endif %}
-            </div>
-        </nav>
-        
+        {% block 'body' %}{% endblock %}
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>

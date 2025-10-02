@@ -87,10 +87,10 @@ def login_usuario(request):
     # Verifica se o método de compartilhamento de dados é POST e atribui os dados às variáveis. 
     if request.method == "POST":
         username = request.POST.get("username")
-        senha = request.POST.get("senha")
+        password = request.POST.get("password")
 
         # Verifica se os dados estão corretos.
-        user = authenticate(request, username=username, senha=senha)
+        user = authenticate(request, username=username, password=password)
 
         # Se o usuário existir, é acessado a página do perfil dele; se não, é exibido um erro.
         if user is not None:
@@ -98,15 +98,16 @@ def login_usuario(request):
             return redirect("perfil")
         else:
             erro = "Nome de usuário ou senha incorretos."
-
-    return render(request, "login.html", {"erro":erro})
+            
+        return render(request, "entrar.html", {"erro":erro})
+        
 
 # Definindo função que realiza o logout do usuário e retorna à página de login.
 def logout_usuario(request):
     logout(request)
     return redirect("entrar")
 
-# Se o login for realizado, executa e entra na página do perfil do usuário.
+# Se o login for autenticado, executa e entra na página do perfil do usuário.
 @login_required
 def perfil(request):
     return render(request, "perfil.html")
