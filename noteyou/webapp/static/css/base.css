@@ -7,18 +7,36 @@ nav {
 /* Classes */
 
 .navbar-item {
-    display: flex;
     margin: auto;
-    justify-content: space-evenly;
+    padding: 0%;
 }
 
 .navbar-item img {
     width: 30%;
-    margin: 1%;
+}
+
+.icones {
+    width: 20%;
 }
 
 /* Ids */
 
 #navbar {
     display: flex;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+#icon {
+    margin-left: 2%;
+}
+
+#user-icon {
+    border-radius: 50%;
+    margin-right: 2%;
+}
+
+#user-icon-container {
+    display: flex;
+    justify-content: flex-end;
 }

@@ -3,13 +3,12 @@ from django.db import models
 
 # Create your models here.
 
+# Adiciona campos adicionais para o perfil.
 class Usuario(AbstractUser):
-    # Campos adicionais para o perfil.
     bio = models.TextField(blank=True, null=True)
     foto = models.ImageField(
-        upload_to="foto/", # pasta dentro de MEDIA_ROOT
-        blank=True,
-        null=True
+        upload_to="foto/", # Pasta dentro de MEDIA_ROOT.
+        blank=True, null=True
     )
 
     def __str__(self):

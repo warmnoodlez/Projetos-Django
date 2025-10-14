@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Página Inicial{% endblock %}
+
+{% block 'head' %}
+
+{% endblock %}
+
+{% block 'body' %}
+<h1 class="text-center">Olá, {{user.username}}</h1>
+
+<main>
+    <div>
+        <p>Diário</p>
+        <img class="icones" src="{% static 'img/icon-diario.png' %}" >
+    </div>
+</main>
+{% endblock %}

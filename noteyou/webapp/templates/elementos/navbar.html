@@ -2,13 +2,17 @@
 
 <nav id="navbar">
     <div class="navbar-item">
-        <img src="{% static 'img/abelha.png'%}" id="icon">
+        <a href="{% url 'home' %}"><img src="{% static 'img/abelha.png' %}" id="icon"></a>
     </div>
-    <div class="navbar-item" id="user-icon-container">
+    <div class="navbar-item">
         {% if user.username %}
-            <a href="{% url 'perfil' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">{{ user.username }}</a>
+            {% if user.foto %}
+                <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{{user.foto.url}}" alt="{{ user.username }}" title="{{ user.username }}"></a>
+            {% else %}
+                <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{% static 'img/user-icon.png' %}" alt="{{ user.username }}" title="{{ user.username }}"></a>
+            {% endif %}
         {% else %}
-            <a href="{% url 'entrar' %}""><img src="{% static 'img/user-icon.png'%}" id="user-icon">Login</a>
+            <a id="user-icon-container" class="fs-3" href="{% url 'entrar' %}""><img id="user-icon" src="{% static 'img/user-icon.png' %}">Login</a>
         {% endif %}
     </div>
 </nav>

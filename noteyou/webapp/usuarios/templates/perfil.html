@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Seu perfil{% endblock %}
 
 {% block 'body' %}
-<h1>Olá, {{user.first_name}} {{user.last_name}}</h1>
-<div>
-    Seu Nickname: {{user.username}}
-</div>
+{% if not user.first_name %}
+    <h1>Olá, Admin!</h1>
+{% else %}
+<h1 class="text-center">Olá, {{user.first_name}} {{user.last_name}}</h1> <!-- Exibe o nome e sobrenome do usuário. -->
+{% endif %}
+<p class="text-center">Seu Nickname: {{user.username}}</p> <!-- Exibe o nickname do usuário. -->
 <hr class="invisivel">
-<div>
-    {{user.foto}}
-</div class="invisivel">
-<hr>
-<a href="{% url 'logout' %}"><button>Logout</button></a>
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" role="button" href="{% url 'logout' %}">Terminar sessão</a>
+</div>
 {% endblock %}

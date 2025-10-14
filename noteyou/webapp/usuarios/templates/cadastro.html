@@ -1,3 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}Cadastro{% endblock %}
+
+{% block 'head' %}
+
+{% endblock %}
+
+{% block 'body' %}
 <h2>Registrar Usuário</h2>
 
 {% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
@@ -24,4 +34,5 @@
     <button type="submit">Registrar</button>
 </form>
 
-<a href="{% url 'entrar' %}"><button>Já possuo conta</button></a> <!-- Botão que redireciona para a página de Login. -->
+<a class="btn btn-primary" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
+{% endblock %}
