@@ -1,10 +1,8 @@
 {% load static %}
 
 <nav id="navbar">
-    <div class="navbar-item">
-        <a href="{% url 'home' %}"><img src="{% static 'img/abelha.png' %}" id="icon"></a>
-    </div>
-    <div class="navbar-item">
+    <a id="home" href="{% url 'home' %}"><img src="{% static 'img/abelha.png' %}" id="icon"></a>
+    <div class="perfil-login">
         {% if user.username %}
             {% if user.foto %}
                 <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{{user.foto.url}}" alt="{{ user.username }}" title="{{ user.username }}"></a>
@@ -12,7 +10,7 @@
                 <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{% static 'img/user-icon.png' %}" alt="{{ user.username }}" title="{{ user.username }}"></a>
             {% endif %}
         {% else %}
-            <a id="user-icon-container" class="fs-3" href="{% url 'entrar' %}""><img id="user-icon" src="{% static 'img/user-icon.png' %}">Login</a>
+            <a class="btn btn-light float-end" href="{% url 'entrar' %}"">Login</a>
         {% endif %}
     </div>
 </nav>
