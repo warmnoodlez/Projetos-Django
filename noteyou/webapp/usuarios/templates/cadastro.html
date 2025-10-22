@@ -8,31 +8,47 @@
 {% endblock %}
 
 {% block 'body' %}
-<h2>Registrar Usuário</h2>
+<h2 class="text-center">Registrar Usuário</h2>
 
 {% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
 
 <!-- Formulário de cadastro de perfil. -->
-<form method="post" action="{% url 'cadastrar' %}" enctype="multipart/form-data">
+<form method="post" action="{% url 'cadastrar' %}" enctype="multipart/form-data" class="formulario">
     {% csrf_token %} <!-- Token de sergurança para casos de ataques mal-intencionados. -->
-    <label>Nome:</label>
-    <input type="text" name="nome"><br>
-    <label>Sobrenome:</label>
-    <input type="text" name="sobrenome"><br>
-    <label>Usuário:</label>
-    <input type="text" name="username"><br>
-    <label>E-mail:</label>
-    <input type="email" name="email"><br>
-    <label>Senha:</label>
-    <input type="password" name="senha"><br>
-    <label>Confirme a senha:</label>
-    <input type="password" name="conf_senha"><br>
-    <label>Bio:</label><br>
-    <textarea name="bio" rows="4" cols="40"></textarea><br>
-    <label>Avatar:</label>
-    <input type="file" name="foto"><br>
-    <button type="submit">Registrar</button>
+    <div class="mb-2">
+        <label class="form-label">Nome:</label>
+        <input type="text" name="nome" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Sobrenome:</label>
+        <input type="text" name="sobrenome" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Usuário:</label>
+        <input type="text" name="username" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">E-mail:</label>
+        <input type="email" name="email" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Senha:</label>
+        <input type="password" name="senha" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Confirme a senha:</label>
+        <input type="password" name="conf_senha" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Avatar:</label>
+        <input type="file" name="foto" class="form-control">
+    </div>
+    <!-- <label>Bio:</label><br>
+    <textarea name="bio" rows="4" cols="40"></textarea><br> -->
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
 </form>
-
-<a class="btn btn-primary" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
+<hr>
+<a class="btn btn-secondary" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
 {% endblock %}

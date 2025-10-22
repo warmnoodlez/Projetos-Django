@@ -4,13 +4,12 @@
 {% block 'title' %}Seu perfil{% endblock %}
 
 {% block 'body' %}
-{% if not user.first_name %}
-    <h1>Olá, Admin!</h1>
-{% else %}
-<h1 class="text-center">Olá, {{user.first_name}} {{user.last_name}}</h1> <!-- Exibe o nome e sobrenome do usuário. -->
-{% endif %}
-<p class="text-center">Seu Nickname: {{user.username}}</p> <!-- Exibe o nickname do usuário. -->
-<hr class="invisivel">
+<h1 class="text-center">Informações do usuário</h1>
+<hr class="invisible-hr">
+<p class="text-center">Foto:</p>
+<div class="flex-container center"><img id="perfil-icon" src="{{user.foto.url}}" class="border border-3"></div>
+<p class="text-center"><br>Nickname: {{user.username}}<br>Nome e sobrenome: {{user.first_name}} {{user.last_name}}<br>E-mail: {{user.email}}</p> <!-- Exibe o nickname do usuário. -->
+<hr>
 <div class="d-flex justify-content-center">
     <a class="btn btn-primary" role="button" href="{% url 'logout' %}">Terminar sessão</a>
 </div>

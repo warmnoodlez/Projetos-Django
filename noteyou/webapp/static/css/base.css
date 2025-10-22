@@ -6,50 +6,51 @@ nav {
 
 /* Classes */
 
-.perfil-login {
-    float: right;
-}
-
-.container {
+.flex-container {
     display: flex;
 }
 
-.navbar-item {
-    margin: auto;
-    padding: 0%;
+.flex-container.center {
+    justify-content: center;
 }
 
-.navbar-item img {
-    width: 30vh;
+.nav-icon {
+    border-radius: 1vh;
+    height: 8vh;
+    margin: 1vh;
 }
 
-.navbar-item .login-button{
-    margin-right: 2%;
+.user-icon-container {
+    justify-self: end;
+}
+
+.login-button-container {
+    align-self: center;
+    margin: 1vh;
 }
 
 .icones {
     width: 20vh;
 }
 
+.invisible-hr {
+    opacity: 0;
+}
+
+.formulario {
+    margin: auto;
+    max-width: 50vh;
+}
+
 /* Ids */
 
 #navbar {
-    display: flex;
-    padding: 2vh;
+    display: grid;
+    grid-template-columns: auto auto;
     margin-bottom: 3vh;
 }
 
-#icon {
-    width: 10vh;
-}
-
-#user-icon {
-    border-radius: 50vh;
-    margin-right: 2vh;
-    width: 10vh;
-    float: right;
-}
-
-#home {
-    float: left;
+#perfil-icon {
+    height: 15vh;
+    border-radius: 1vh;
 }

@@ -8,12 +8,13 @@
 {% endblock %}
 
 {% block 'body' %}
-<h1 class="text-center">Olá, {{user.username}}</h1>
+<h1 class="text-center">Olá, {{user.username}}!</h1>
 
-<main>
+<main class="">
     <div>
         <p>Diário</p>
         <img class="icones" src="{% static 'img/icon-diario.png' %}" >
     </div>
 </main>
+
 {% endblock %}

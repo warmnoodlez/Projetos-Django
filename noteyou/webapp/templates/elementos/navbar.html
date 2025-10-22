@@ -1,16 +1,15 @@
 {% load static %}
 
 <nav id="navbar">
-    <a id="home" href="{% url 'home' %}"><img src="{% static 'img/abelha.png' %}" id="icon"></a>
-    <div class="perfil-login">
+    <div class="bee-icon-container"><a href="{% url 'home' %}"><img src="{% static 'img/abelha.png' %}" class="nav-icon"></a></div>
         {% if user.username %}
             {% if user.foto %}
-                <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{{user.foto.url}}" alt="{{ user.username }}" title="{{ user.username }}"></a>
+                <div class="user-icon-container"><a href="{% url 'perfil' %}"><img class="nav-icon" src="{{user.foto.url}}" alt="{{ user.username }}" title="{{ user.username }}"></a></div>
             {% else %}
-                <a id="user-icon-container" href="{% url 'perfil' %}"><img id="user-icon" src="{% static 'img/user-icon.png' %}" alt="{{ user.username }}" title="{{ user.username }}"></a>
+                <div class="user-icon-container"><a href="{% url 'perfil' %}"><img class="nav-icon" src="{% static 'img/user-icon.png' %}" alt="{{ user.username }}" title="{{ user.username }}"></a></div>
             {% endif %}
         {% else %}
-            <a class="btn btn-light float-end" href="{% url 'entrar' %}"">Login</a>
+            <div class="login-button-container"><a id="login-button" class="btn btn-light float-end" href="{% url 'entrar' %}"">Login</a></div>
         {% endif %}
     </div>
 </nav>
