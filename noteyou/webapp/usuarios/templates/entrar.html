@@ -13,20 +13,22 @@
 {% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
 
 <!-- Formulário de login do usuário. -->
-<form method="post" action="{% url 'login' %}" class="formulario">
-    {% csrf_token %} <!-- Token de sergurança para casos de ataques mal-intencionados. -->
-    <div class="mb-3">
-        <label class="form-label">Usuário:</label>
-        <input type="text" name="username" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Senha:</label>
-        <input type="password" name="password" class="form-control">
-    </div>
-    <div class="mb-4">
-        <button type="submit" class="btn btn-primary">Entrar</button>
-    </div>
-</form>
+<div class="formulario">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %} <!-- Token de sergurança para casos de ataques mal-intencionados. -->
+        <div class="mb-3">
+            <label class="form-label">Usuário:</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Senha:</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="mb-4">
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+    </form>
+</div>
 <hr>
 <div class="flex-container center">
     <a class="btn btn-secondary mt-2" role="button" href="{% url 'registro' %}">Criar conta</a>

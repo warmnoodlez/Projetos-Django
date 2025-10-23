@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block 'body' %}
-<h2 class="text-center">Registrar Usuário</h2>
+<h2 class="text-center">Cadastro</h2>
 
 {% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
 
@@ -39,16 +39,19 @@
         <label class="form-label">Confirme a senha:</label>
         <input type="password" name="conf_senha" class="form-control">
     </div>
-    <div class="mb-2">
+    <div class="mb-3">
         <label class="form-label">Avatar:</label>
         <input type="file" name="foto" class="form-control">
     </div>
     <!-- <label>Bio:</label><br>
     <textarea name="bio" rows="4" cols="40"></textarea><br> -->
-        <div class="mb-3">
+        <div class="mb-4">
             <button type="submit" class="btn btn-primary">Registrar</button>
         </div>
 </form>
 <hr>
-<a class="btn btn-secondary" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
+<div class="flex-container center">
+    <a id="ja-possuo-button" class="btn btn-secondary mt-2 mb-4" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
+</div>
+
 {% endblock %}

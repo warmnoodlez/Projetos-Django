@@ -42,6 +42,13 @@ nav {
     max-width: 50vh;
 }
 
+.bottom-buttons {
+    display: grid;
+    bottom: 0;
+    position: fixed;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 /* Ids */
 
 #navbar {
