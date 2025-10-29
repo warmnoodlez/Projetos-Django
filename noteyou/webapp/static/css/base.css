@@ -4,6 +4,15 @@ nav {
     background-color: #0532ff;
 }
 
+footer {
+    background-color: #0532ff;
+}
+
+body {
+    margin-bottom: 12vh;
+    margin-top: 12vh;
+}
+
 /* Classes */
 
 .flex-container {
@@ -12,6 +21,12 @@ nav {
 
 .flex-container.center {
     justify-content: center;
+}
+
+.form-label .obrigatorio::after {
+    content: " *"; /* Inserts an asterisk after the label text */
+    color: red;    /* Sets the color of the asterisk to red */
+    margin-left: 2px; /* Adds a small space between the label and asterisk */
 }
 
 .nav-icon {
@@ -38,23 +53,30 @@ nav {
 }
 
 .formulario {
-    margin: auto;
-    max-width: 50vh;
+    display: block;
+    margin: 5vh
 }
 
 .bottom-buttons {
     display: grid;
-    bottom: 0;
     position: fixed;
-    grid-template-columns: 1fr 1fr 1fr;
+    bottom: 0;
+    grid-template-columns: 33vw 33vw 33vw;
+    gap: 0.5vw
+}
+
+.footer-icon-container{
+    display: flex;
+    justify-content: center;
 }
 
 /* Ids */
 
 #navbar {
+    position: fixed;
+    top: 0;
     display: grid;
-    grid-template-columns: auto auto;
-    margin-bottom: 3vh;
+    grid-template-columns: 50vw 50vw;
 }
 
 #perfil-icon {

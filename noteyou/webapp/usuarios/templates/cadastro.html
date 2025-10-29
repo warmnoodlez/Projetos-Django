@@ -8,9 +8,9 @@
 {% endblock %}
 
 {% block 'body' %}
-<h2 class="text-center">Cadastro</h2>
+<h2 class="text-center">Crie sua conta!</h2>
 
-{% if erro %}<p style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
+{% if erro %}<p class= "text-center" style="color:red;">{{ erro }}</p>{% endif %} <!-- Se houver erro, ele é exibido. -->
 
 <!-- Formulário de cadastro de perfil. -->
 <form method="post" action="{% url 'cadastrar' %}" enctype="multipart/form-data" class="formulario">
@@ -50,7 +50,7 @@
         </div>
 </form>
 <hr>
-<div class="flex-container center">
+<div class="flex-container center mb-8">
     <a id="ja-possuo-button" class="btn btn-secondary mt-2 mb-4" role="button" href="{% url 'entrar' %}">Já possuo conta</a> <!-- Redireciona para a página de Login. -->
 </div>
 
