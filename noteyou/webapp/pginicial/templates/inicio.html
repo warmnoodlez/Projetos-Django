@@ -10,10 +10,19 @@
 {% block 'body' %}
 <h1 class="text-center">Olá, {{user.username}}!</h1>
 
-<main class="blocos">
-    <div>
-        <p>Diário</p>
-        <img class="icones" src="{% static 'img/icon-diario.png' %}" >
+<main class="main-blocos">
+    <a id="bloco-diario" class="bloco">
+        <p class="title-blocos">Diário</p>
+        <img class="icones-blocos" src="{% static 'img/icon-diario.png' %}" >
+    </a>
+    <div id="bloco-chat" class="bloco">
+        <p class="title-blocos">Chat</p>
+        <img class="icones-blocos" src="{% static 'img/icon-chat.png' %}">
+    </div>
+    <div></div>
+    <div id="bloco-feedback" class="bloco">
+        <p class="title-blocos">Feedback</p>
+        <img class="icones-blocos" src="{% static 'img/icon-lamp.png' %}">
     </div>
 </main>
 

@@ -23,12 +23,6 @@ body {
     justify-content: center;
 }
 
-.form-label .obrigatorio::after {
-    content: " *"; /* Inserts an asterisk after the label text */
-    color: red;    /* Sets the color of the asterisk to red */
-    margin-left: 2px; /* Adds a small space between the label and asterisk */
-}
-
 .nav-icon {
     border-radius: 1vh;
     height: 8vh;
@@ -70,6 +64,33 @@ body {
     justify-content: center;
 }
 
+.bloco{
+    text-align: center;
+    border-radius: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.main-blocos{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 50wh 50wh;
+    grid-template-rows: 20vh 20vh;
+    gap: 5vw;
+
+}
+
+.icones-blocos{
+    width: 30wh;
+    height: 30vw;
+    
+}
+
+.title-blocos{
+    margin-top: 1vh;
+    font-size: x-large;
+}
+
 /* Ids */
 
 #navbar {
@@ -82,4 +103,22 @@ body {
 #perfil-icon {
     height: 15vh;
     border-radius: 1vh;
+}
+
+#bloco-diario{
+    background-color: #0532ff;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#bloco-chat{
+    background-color:blueviolet;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#bloco-feedback{
+    background-color: #ff0000;
+    grid-column: 2;
+    grid-row: 2;
 }
