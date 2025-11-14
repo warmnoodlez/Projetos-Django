@@ -38,6 +38,11 @@ body {
     margin: 1vh;
 }
 
+.long-text-container{
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
 .icones {
     width: 20vh;
 }
@@ -81,8 +86,7 @@ body {
 }
 
 .icones-blocos{
-    width: 30wh;
-    height: 30vw;
+    height: 70%;
     
 }
 
@@ -106,19 +110,25 @@ body {
 }
 
 #bloco-diario{
-    background-color: #0532ff;
+    background-color: red;
     grid-column: 1;
     grid-row: 1;
 }
 
 #bloco-chat{
-    background-color:blueviolet;
+    background-color: yellow;
     grid-column: 2;
     grid-row: 1;
 }
 
+#bloco-buscar-apoio{
+    background-color: rgb(46, 46, 255);
+    grid-column: 1;]
+    grid-row: 2;
+}
+
 #bloco-feedback{
-    background-color: #ff0000;
+    background-color: rgb(132, 0, 255);
     grid-column: 2;
     grid-row: 2;
 }

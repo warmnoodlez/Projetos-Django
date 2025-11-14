@@ -11,19 +11,22 @@
 <h1 class="text-center">Olá, {{user.username}}!</h1>
 
 <main class="main-blocos">
-    <a id="bloco-diario" class="bloco">
+    <a id="bloco-diario" class="bloco" href="{% url 'journal' %}">
         <p class="title-blocos">Diário</p>
         <img class="icones-blocos" src="{% static 'img/icon-diario.png' %}" >
     </a>
-    <div id="bloco-chat" class="bloco">
+    <a id="bloco-chat" class="bloco">
         <p class="title-blocos">Chat</p>
         <img class="icones-blocos" src="{% static 'img/icon-chat.png' %}">
-    </div>
-    <div></div>
-    <div id="bloco-feedback" class="bloco">
+    </a>
+    <a id="bloco-buscar-apoio" class="bloco">
+        <p class="title-blocos">Buscar Apoio</p>
+        <img class="icones-blocos" src="{% static 'img/icon-lupa.png' %}">
+    </a>
+    <a id="bloco-feedback" class="bloco">
         <p class="title-blocos">Feedback</p>
         <img class="icones-blocos" src="{% static 'img/icon-lamp.png' %}">
-    </div>
+    </a>
 </main>
 
 {% endblock %}

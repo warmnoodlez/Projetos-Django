@@ -4,9 +4,9 @@ from django.shortcuts import render
 
 def home (request):
     if request.user.is_authenticated:
-        return render(request, 'inicio.html')
+        return render(request, 'pginicial/inicio.html')
     else:
-        return render(request, 'index.html')
+        return render(request, 'pginicial/index.html')
 
 # def verificacao (request):
 #     if request.user.is_authenticated:

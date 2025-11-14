@@ -29,10 +29,10 @@ def home(request):
 def registro(request):
     # print(request.method)
     # if request.method == "POST":
-    return render(request, 'cadastro.html')
+    return render(request, 'usuarios/cadastro.html')
 
 def entrar(request):
-    return render(request, 'entrar.html')
+    return render(request, 'usuarios/entrar.html')
 
 
 # Definindo função que realiza o cadastro de um usuário.
@@ -76,7 +76,7 @@ def cadastro_usuario(request):
             login(request, user)
             return redirect("perfil")
 
-    return render(request, "cadastro.html", {"erro": erro})
+    return render(request, "usuarios/cadastro.html", {"erro": erro})
         
 
 # Definindo função que realiza o login do usuário.
@@ -99,7 +99,7 @@ def login_usuario(request):
         else:
             erro = "Nome de usuário ou senha incorretos."
             
-        return render(request, "entrar.html", {"erro":erro})
+        return render(request, "usuarios/entrar.html", {"erro":erro})
         
 
 # Definindo função que realiza o logout do usuário e retorna à página de login.
@@ -110,4 +110,4 @@ def logout_usuario(request):
 # Se o login for autenticado, executa e entra na página do perfil do usuário.
 @login_required
 def perfil(request):
-    return render(request, "perfil.html")
+    return render(request, "usuarios/perfil.html")
