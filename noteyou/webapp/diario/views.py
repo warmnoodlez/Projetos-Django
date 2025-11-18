@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def journal(request):
     return render(request, 'diario/index.html')
+
+def novodia(request):
+    return render(request, 'diario/dia.html')
